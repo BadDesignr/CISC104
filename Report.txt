@@ -1,0 +1,7 @@
+The intentions of project one was to make a simple count game where the player would be a cube.
+ You could control the cube through wasd controls and would locate the sphere on the platform. Once running
+into the sphere the Ball Count at the center of the platform would increase for each time the Cube and Sphere
+Were to collide. The way it would work is that the coding for movement was a code that 
+would get input from the different axises to have the cube move places. The actual 
+collision manager was going to be similar to the week 4 if statement collision manager but using 
+only one input instead of two. Unfortunately it didn't go all that well.

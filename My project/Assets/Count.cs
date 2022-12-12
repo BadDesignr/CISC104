@@ -3,34 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class BallCount : MonoBehaviour
+public class CountManager : MonoBehaviour
 {
-    static int Count = 0;
+    static int Count = 0; 
 
-    private TextMeshPro Count;
+    private TextMeshPro CountText;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject Cube = GameObject.Find("Cube");
+        GameObject SphereGameObject = GameObject.Find("Count");
 
-        Count = Cube.GetComponent<TextMeshPro>();
+        CountText = SphereGameObject.GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Count.text = "Ball Count : " + ballCollisionCount;
+        CountText.text = "Ball Count: " + Count;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Cube")
+        if (collision.gameObject.tag == "Sphere")
         {
-            ballCollisionCount++;
+            Count++;
         }
-
-        // Do something comparable for when collisions occur between a ball and a wall.
-        // Hint, the walls have the tag "Wall".
+    }
+        public virtual void CollideWithSphere(GameObject Sphere)
+    {
+        Debug.Log("Base Collision Manager Function");
     }
 }
